@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Sonaly</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    font-family:Arial;
+}
+
+/* ESTRELLAS */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    0%{opacity:0.2;}
+    50%{opacity:1;}
+    100%{opacity:0.2;}
+}
+
+/* TEXTO */
+.contenido{
+    position:absolute;
+    top:40%;
+    width:100%;
+    text-align:center;
+    color:white;
+}
+
+h1{
+    font-size:60px;
+    text-shadow:0 0 20px white, 0 0 40px blue;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 25px;
+    font-size:18px;
+    background:#111;
+    color:white;
+    border:1px solid white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="contenido">
+    <h1>Para Sonaly 💫</h1>
+    <p>Hay algo especial para ti…</p>
+
+    <button onclick="abrirCarta()">Abrir carta 💌</button>
+</div>
+
+<script>
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<200;i++){
+    let star = document.createElement("span");
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+    star.style.position="absolute";
+    starsContainer.appendChild(star);
+}
+
+function abrirCarta(){
+    window.location.href="carta.html";
+}
+</script>
+
+</body>
+</html>
